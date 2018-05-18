@@ -1,14 +1,15 @@
 object Versions {
     val gradleAndroidPlugin = "3.0.1"
 
-    val compileSdk = 27
-    val targetSdk = 27
+    val compileSdk = 26
+    val targetSdk = 26
     val minSdkVersion = 21
     val releaseVersionCode = 1
     val releaseVersionName = "1.0.0"
 
-    val appcompat = "27.1.1"
-    val kotlin = "1.2.30"
+    val appcompat = "26.1.0"
+    val constraintLayout = "1.1.0"
+    val kotlin = "1.2.41"
     val retrofit = "2.4.0"
     val rxJava = "2.1.12"
     val rxAndroid = "2.0.2"

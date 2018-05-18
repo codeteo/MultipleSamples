@@ -27,6 +27,7 @@ object ProjectDependencies {
     val rxAndroid = "io.reactivex.rxjava2:rxandroid:${Versions.rxAndroid}"
 
     val supportAppCompat = "com.android.support:appcompat-v7:${Versions.appcompat}"
+    val constraintLayout = "com.android.support.constraint:constraint-layout:${Versions.constraintLayout}"
 }
 
 object TestProjectDependencies {
