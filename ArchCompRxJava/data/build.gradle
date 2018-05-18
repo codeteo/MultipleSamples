@@ -1,12 +1,11 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion Versions.compileSdk
     defaultConfig {
-        applicationId "com.examples"
         minSdkVersion Versions.minSdkVersion
         targetSdkVersion Versions.targetSdk
         versionCode Versions.releaseVersionCode
@@ -28,33 +27,29 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    // Modules
+    // project dependencies
     implementation project(ProjectModules.domain)
 
-    // Basic
-    implementation ProjectDependencies.kotlin
-    implementation ProjectDependencies.supportAppCompat
-    implementation ProjectDependencies.constraintLayout
+    // external dependencies
+    api ProjectDependencies.retrofit
+    implementation ProjectDependencies.rxJava2Adapter
+    implementation ProjectDependencies.gson
+    implementation ProjectDependencies.loggingInterceptor
 
-    // Dagger
+    implementation ProjectDependencies.kotlin
+
     implementation ProjectDependencies.daggerAndroid
     implementation ProjectDependencies.daggerAndroidSupport
     kapt ProjectDependencies.daggerAnnotationProcessor
     kapt ProjectDependencies.daggerCompiler
 
-    // RxJava
     implementation ProjectDependencies.rxJava2
     implementation ProjectDependencies.rxAndroid
 
+    // testing dependencies
     testImplementation TestProjectDependencies.junit
     testImplementation TestProjectDependencies.assertJ
     testImplementation TestProjectDependencies.mockitoKotlin
     androidTestImplementation TestProjectDependencies.androidTestRunner
     androidTestImplementation TestProjectDependencies.espresso
-}
-
-configurations.all {
-    resolutionStrategy {
-        force "com.android.support:support-annotations:${Versions.appcompat}"
-    }
 }
