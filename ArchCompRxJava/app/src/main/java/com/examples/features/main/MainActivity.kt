@@ -1,4 +1,4 @@
-package com.examples.features.details
+package com.examples.features.main
 
 import android.os.Bundle
 import com.examples.R

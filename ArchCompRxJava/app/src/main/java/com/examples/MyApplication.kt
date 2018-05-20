@@ -2,6 +2,7 @@ package com.examples
 
 import android.app.Activity
 import android.app.Application
+import com.examples.di.components.DaggerApplicationComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
@@ -19,7 +20,10 @@ class MyApplication: Application(), HasActivityInjector {
     }
 
     private fun initInjection() {
-//        DaggerApplicationComponent
+        DaggerApplicationComponent.builder()
+                .application(this)
+                .build()
+                .inject(this)
     }
 
     override fun activityInjector(): AndroidInjector<Activity> = dispatchingAndroidInjector
