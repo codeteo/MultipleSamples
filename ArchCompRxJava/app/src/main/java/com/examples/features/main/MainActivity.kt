@@ -3,7 +3,6 @@ package com.examples.features.main
 import android.os.Bundle
 import com.examples.R
 import dagger.android.support.DaggerAppCompatActivity
-import timber.log.Timber
 import javax.inject.Inject
 
 class MainActivity : DaggerAppCompatActivity(), MainMVP.View {
@@ -14,9 +13,7 @@ class MainActivity : DaggerAppCompatActivity(), MainMVP.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Timber.i("BEFORE")
         presenter.onLoadData()
-        Timber.i("AFTER")
     }
 
     override fun showData() {

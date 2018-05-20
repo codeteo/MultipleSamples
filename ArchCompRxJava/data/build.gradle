@@ -46,6 +46,13 @@ dependencies {
     implementation ProjectDependencies.rxJava2
     implementation ProjectDependencies.rxAndroid
 
+    // Networking
+    implementation ProjectDependencies.okHttp
+    implementation ProjectDependencies.retrofit
+    implementation ProjectDependencies.loggingInterceptor
+    implementation ProjectDependencies.gson
+    implementation ProjectDependencies.rxJava2Adapter
+
     // testing dependencies
     testImplementation TestProjectDependencies.junit
     testImplementation TestProjectDependencies.assertJ

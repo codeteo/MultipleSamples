@@ -1,5 +1,6 @@
 package com.examples.di.modules
 
+import com.examples.mylibrary.GithubApi
 import com.examples.utils.BaseUrlInterceptor
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -57,11 +58,9 @@ class NetworkModule {
                 .build()
     }
 
-/*
     @Provides
     @Singleton
     fun providesGithubApi(retrofit: Retrofit): GithubApi {
         return retrofit.create(GithubApi::class.java)
     }
-*/
 }

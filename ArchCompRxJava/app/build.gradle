@@ -30,6 +30,7 @@ dependencies {
 
     // Modules
     implementation project(ProjectModules.domain)
+    implementation project(ProjectModules.data)
 
     // Basic
     implementation ProjectDependencies.kotlin
