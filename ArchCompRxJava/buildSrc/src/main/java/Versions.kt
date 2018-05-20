@@ -10,6 +10,7 @@ object Versions {
     val appcompat = "26.1.0"
     val constraintLayout = "1.1.0"
     val kotlin = "1.2.41"
+    val okHttp = "3.10.0"
     val retrofit = "2.4.0"
     val rxJava = "2.1.12"
     val rxAndroid = "2.0.2"
