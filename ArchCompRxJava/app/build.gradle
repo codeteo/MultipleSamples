@@ -53,6 +53,10 @@ dependencies {
     implementation ProjectDependencies.gson
     implementation ProjectDependencies.rxJava2Adapter
 
+    // Utils
+    implementation ProjectDependencies.timber
+
+    // Testing
     testImplementation TestProjectDependencies.junit
     testImplementation TestProjectDependencies.assertJ
     testImplementation TestProjectDependencies.mockitoKotlin

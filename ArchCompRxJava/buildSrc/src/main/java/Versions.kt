@@ -18,6 +18,7 @@ object Versions {
     val dagger = "2.15"
     val javaxInject = "1"
     val ktlint = "0.20.0"
+    val timber = "4.7.0"
 
     val junit = "4.12"
     val androidTestRunner = "1.0.1"

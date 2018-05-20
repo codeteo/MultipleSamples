@@ -29,6 +29,8 @@ object ProjectDependencies {
 
     val supportAppCompat = "com.android.support:appcompat-v7:${Versions.appcompat}"
     val constraintLayout = "com.android.support.constraint:constraint-layout:${Versions.constraintLayout}"
+
+    val timber = "com.jakewharton.timber:timber:${Versions.timber}"
 }
 
 object TestProjectDependencies {
