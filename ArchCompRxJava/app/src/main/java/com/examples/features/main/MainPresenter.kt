@@ -1,7 +1,7 @@
 package com.examples.features.main
 
+import com.examples.mylibrary.GithubApi
 import com.examples.utils.schedulers.BaseSchedulerProvider
-import timber.log.Timber
 import javax.inject.Inject
 
 /**
@@ -11,11 +11,15 @@ import javax.inject.Inject
 class MainPresenter
     @Inject constructor(
                 val view: MainMVP.View,
+                val service: GithubApi,
                 val schedulerProvider: BaseSchedulerProvider
     ) : MainMVP.Presenter {
 
     override fun onLoadData() {
-        Timber.i("ON LOAD DATA")
+        service.search("Retrofit")
+                .subscribeOn(schedulerProvider.io())
+                .observeOn(schedulerProvider.androidMainThread())
+                .subscribe()
     }
 
 }
