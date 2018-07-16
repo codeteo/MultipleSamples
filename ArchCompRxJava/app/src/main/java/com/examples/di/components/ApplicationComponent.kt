@@ -3,7 +3,7 @@ package com.examples.di.components
 import com.examples.MyApplication
 import com.examples.di.builder.ActivityBuilder
 import com.examples.di.modules.ApplicationModule
-import com.examples.di.modules.NetworkModule
+import com.examples.mylibrary.di.NetworkModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule

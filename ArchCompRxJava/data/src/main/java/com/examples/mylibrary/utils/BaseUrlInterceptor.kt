@@ -1,4 +1,4 @@
-package com.examples.utils
+package com.examples.mylibrary.utils
 
 import android.support.annotation.NonNull
 import android.support.annotation.Nullable

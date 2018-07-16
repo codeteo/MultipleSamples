@@ -1,9 +1,8 @@
-package com.examples.di.modules
+package com.examples.mylibrary.di
 
+import com.examples.mylibrary.Constants
 import com.examples.mylibrary.GithubApi
-import com.examples.utils.BaseUrlInterceptor
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
+import com.examples.mylibrary.utils.BaseUrlInterceptor
 import dagger.Module
 import dagger.Provides
 import okhttp3.HttpUrl
@@ -16,19 +15,27 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 /**
- * Dagger module building dependencies with Application scope.
+ * Provides network dependencies with app scope.
  */
 
 @Module
 class NetworkModule {
 
-    private val CONNECTION_TIMEOUT = 15
+    companion object {
+        private val PRODUCTION_API_BASE_URL = HttpUrl.parse(Constants.BASE_URL)!!
+        private const val CONNECTION_TIMEOUT = 15
+    }
 
     @Provides
     @Singleton
-    fun providesGson(): Gson {
-        return GsonBuilder()
-                .create()
+    fun providesBaseUrl(): HttpUrl {
+        return PRODUCTION_API_BASE_URL
+    }
+
+    @Provides
+    @Singleton
+    fun providesBaseUrlInterceptor(baseUrl: HttpUrl): BaseUrlInterceptor {
+        return BaseUrlInterceptor(baseUrl.toString())
     }
 
     @Provides
@@ -49,11 +56,11 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun providesRetrofit(baseUrl: HttpUrl, client: OkHttpClient, gson: Gson): Retrofit {
+    fun providesRetrofit(baseUrl: HttpUrl, client: OkHttpClient): Retrofit {
         return Retrofit.Builder()
                 .client(client)
                 .baseUrl(baseUrl)
-                .addConverterFactory(GsonConverterFactory.create(gson))
+                .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
     }

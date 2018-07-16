@@ -1,4 +1,4 @@
-package com.examples
+package com.examples.mylibrary
 
 /**
  * Place to store app's constant values.

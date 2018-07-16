@@ -25,15 +25,12 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
     // project dependencies
     implementation project(ProjectModules.domain)
 
     // Networking
-    implementation ProjectDependencies.okHttp
-    implementation ProjectDependencies.retrofit
+    api ProjectDependencies.retrofit
     implementation ProjectDependencies.loggingInterceptor
-    implementation ProjectDependencies.gson
+    api ProjectDependencies.gson
     implementation ProjectDependencies.rxJava2Adapter
 }
