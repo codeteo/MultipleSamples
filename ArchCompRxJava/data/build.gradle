@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
+
+apply from: '../config/android-common.gradle'
+apply from: '../config/common.gradle'
 
 android {
     compileSdkVersion Versions.compileSdk
@@ -30,33 +30,10 @@ dependencies {
     // project dependencies
     implementation project(ProjectModules.domain)
 
-    // external dependencies
-    api ProjectDependencies.retrofit
-    implementation ProjectDependencies.rxJava2Adapter
-    implementation ProjectDependencies.gson
-    implementation ProjectDependencies.loggingInterceptor
-
-    implementation ProjectDependencies.kotlin
-
-    implementation ProjectDependencies.daggerAndroid
-    implementation ProjectDependencies.daggerAndroidSupport
-    kapt ProjectDependencies.daggerAnnotationProcessor
-    kapt ProjectDependencies.daggerCompiler
-
-    implementation ProjectDependencies.rxJava2
-    implementation ProjectDependencies.rxAndroid
-
     // Networking
     implementation ProjectDependencies.okHttp
     implementation ProjectDependencies.retrofit
     implementation ProjectDependencies.loggingInterceptor
     implementation ProjectDependencies.gson
     implementation ProjectDependencies.rxJava2Adapter
-
-    // testing dependencies
-    testImplementation TestProjectDependencies.junit
-    testImplementation TestProjectDependencies.assertJ
-    testImplementation TestProjectDependencies.mockitoKotlin
-    androidTestImplementation TestProjectDependencies.androidTestRunner
-    androidTestImplementation TestProjectDependencies.espresso
 }

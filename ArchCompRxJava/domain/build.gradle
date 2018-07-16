@@ -1,20 +1,11 @@
 apply plugin: 'java-library'
 apply plugin: 'kotlin'
 
-dependencies {
-    // external dependencies
-    implementation ProjectDependencies.kotlin
+apply from: '../config/common.gradle'
 
+dependencies {
     // dagger annotations
     implementation ProjectDependencies.javaInject
-
-    // rxjava 2
-    implementation ProjectDependencies.rxJava2
-
-    // testing dependencies
-    testImplementation TestProjectDependencies.junit
-    testImplementation TestProjectDependencies.assertJ
-    testImplementation TestProjectDependencies.mockitoKotlin
 }
 
 sourceCompatibility = "1.8"

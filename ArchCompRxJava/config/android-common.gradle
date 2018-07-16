@@ -1,0 +1,22 @@
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    // dagger
+    implementation ProjectDependencies.daggerAndroid
+    implementation ProjectDependencies.daggerAndroidSupport
+    kapt ProjectDependencies.daggerAnnotationProcessor
+    kapt ProjectDependencies.daggerCompiler
+
+    // rxAndroid
+    implementation ProjectDependencies.rxAndroid
+
+    // testing dependencies
+    androidTestImplementation TestProjectDependencies.androidTestRunner
+    androidTestImplementation TestProjectDependencies.espresso
+}

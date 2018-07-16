@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
+
+apply from: '../config/android-common.gradle'
+apply from: '../config/common.gradle'
 
 android {
     compileSdkVersion 26
@@ -33,36 +33,8 @@ dependencies {
     implementation project(ProjectModules.data)
 
     // Basic
-    implementation ProjectDependencies.kotlin
     implementation ProjectDependencies.supportAppCompat
     implementation ProjectDependencies.constraintLayout
-
-    // Dagger
-    implementation ProjectDependencies.daggerAndroid
-    implementation ProjectDependencies.daggerAndroidSupport
-    kapt ProjectDependencies.daggerAnnotationProcessor
-    kapt ProjectDependencies.daggerCompiler
-
-    // RxJava
-    implementation ProjectDependencies.rxJava2
-    implementation ProjectDependencies.rxAndroid
-
-    // Network
-    implementation ProjectDependencies.okHttp
-    implementation ProjectDependencies.retrofit
-    implementation ProjectDependencies.loggingInterceptor
-    implementation ProjectDependencies.gson
-    implementation ProjectDependencies.rxJava2Adapter
-
-    // Utils
-    implementation ProjectDependencies.timber
-
-    // Testing
-    testImplementation TestProjectDependencies.junit
-    testImplementation TestProjectDependencies.assertJ
-    testImplementation TestProjectDependencies.mockitoKotlin
-    androidTestImplementation TestProjectDependencies.androidTestRunner
-    androidTestImplementation TestProjectDependencies.espresso
 }
 
 configurations.all {
