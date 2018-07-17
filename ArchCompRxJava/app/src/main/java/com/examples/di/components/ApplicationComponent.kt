@@ -3,6 +3,8 @@ package com.examples.di.components
 import com.examples.MyApplication
 import com.examples.di.builder.ActivityBuilder
 import com.examples.di.modules.ApplicationModule
+import com.examples.di.modules.MappersModule
+import com.examples.di.modules.RepositoryModule
 import com.examples.mylibrary.di.NetworkModule
 import dagger.BindsInstance
 import dagger.Component
@@ -15,10 +17,13 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(
-        modules = [(AndroidSupportInjectionModule::class),
-                    (ApplicationModule::class),
-                    (NetworkModule::class),
-                    (ActivityBuilder::class)]
+        modules = [
+            AndroidSupportInjectionModule::class,
+            ApplicationModule::class,
+            NetworkModule::class,
+            ActivityBuilder::class,
+            RepositoryModule::class,
+            MappersModule::class]
 )
 interface ApplicationComponent {
 
