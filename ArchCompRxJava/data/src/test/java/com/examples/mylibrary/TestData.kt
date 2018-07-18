@@ -8,7 +8,7 @@ import com.examples.mylibrary.models.RepoItem
  * Created by teo on 20/7/2018.
  */
 
-fun getRepoItems(): RepoItem {
+fun getRepoItem(): RepoItem {
     return RepoItem(
             score = 10.0,
             owner = Owner("100", null, "Teo", null, null),
@@ -16,7 +16,7 @@ fun getRepoItems(): RepoItem {
     )
 }
 
-fun getRepos(): Repo {
+fun getRepo(): Repo {
     return Repo(
             id = "100",
             name = "Teo"

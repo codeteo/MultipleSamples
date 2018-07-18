@@ -1,7 +1,7 @@
 package com.examples.mylibrary.mappers
 
-import com.examples.mylibrary.getRepoItems
-import com.examples.mylibrary.getRepos
+import com.examples.mylibrary.getRepo
+import com.examples.mylibrary.getRepoItem
 import org.assertj.core.api.SoftAssertions
 import org.junit.Test
 
@@ -16,8 +16,8 @@ class ReposModelMapperTest {
     @Test
     fun shouldMapRepoItemToRepo() {
         // given
-        val repoItem = getRepoItems()
-        val expectedRepo = getRepos()
+        val repoItem = getRepoItem()
+        val expectedRepo = getRepo()
 
         // when
         val mapResult = mapper.map(repoItem)
