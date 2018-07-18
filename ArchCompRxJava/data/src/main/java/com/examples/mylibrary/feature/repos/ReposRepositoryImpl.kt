@@ -16,7 +16,7 @@ class ReposRepositoryImpl @Inject constructor(
         private val mapper: ReposModelMapper
 ) : ReposRepository {
 
-    override fun getLinesStatus(): Single<List<Repo>> {
+    override fun getRepos(): Single<List<Repo>> {
         return githubApi.search("Retrofit")
                 .map {
                     if (it.isSuccessful) {

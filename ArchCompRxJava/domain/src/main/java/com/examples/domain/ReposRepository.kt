@@ -5,6 +5,6 @@ import io.reactivex.Single
 
 interface ReposRepository {
 
-    fun getLinesStatus(): Single<List<Repo>>
+    fun getRepos(): Single<List<Repo>>
 
 }

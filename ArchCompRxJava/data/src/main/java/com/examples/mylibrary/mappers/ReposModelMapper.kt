@@ -11,7 +11,7 @@ class ReposModelMapper : Mapper<RepoItem, Repo> {
 
     override fun map(from: RepoItem): Repo {
         return Repo(
-                id = from.description,
+                id = from.owner.id,
                 name = from.owner.login!!
         )
     }
